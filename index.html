@@ -1,446 +1,639 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-
- <title>Wedding Invitation</title>
-
- <!-- Bootstrap -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
- <!-- Icons -->
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
- <!-- Fonts -->
- <link href="https://fonts.googleapis.com/css2?family=Delius&family=Updock&display=swap" rel="stylesheet">
-
- <style>
-:root {
-  --primary: #8ead7f;
-  --secondary: #40916c;
- }
- 
- .main::-webkit-scrollbar {
-  display: none;
-}
-
-  /* RESET */
-  body {
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   font-family: 'Delius', cursive;
-  }
-
-  /* SCROLL SNAP */
-  .main {
-   height: 100dvh;
-   overflow-y: scroll;
-   scroll-snap-type: y mandatory;
-  }
-
-  .section {
-   height: 100dvh;
-   scroll-snap-align: start;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-  }
-
-  /* COLORS */
-  .section:nth-child(1) {
-   background: #f4f6f8;
-  }
-  .section:nth-child(2) {
-   background: #e8f0dc;
-  }
-  .section:nth-child(3) {
-   background: #dce7c8;
-  }
-  .section:nth-child(4) {
-   background: #cdddb3;
-  }
-
-  /* TITLE */
-  .section-title {
-   font-family: 'Updock', cursive;
-   font-size: 3.5rem;
-   color: var(--secondary);
-   text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
-  }
-  
-  /* TITLE */
-  .main-title {
-   font-size: 4.5rem!important;
-   animation: fadeUp 7s ease 2s;
-   animation-fill-mode: both;
-   transform: translateY(-40px);
-  }
-
-  .hero-sub {
-   font-size: 1.2rem;
-   color: #555;
-   animation: fadeUp2 10s ease 2s;
-   animation-fill-mode: both;
-   transform: translateY(-40px);
-   text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
-  }
-
-  /* HERO */
-  #home {
-   position: relative;
-   overflow: hidden;
-  }
-
-  .hero-gallery {
-   position: absolute;
-   inset: 0;
-   z-index: 0;
-   overflow: hidden;
-  }
-
-  /* ROW BASE */
-  .scroll-row {
-   position: absolute;
-   width: 100%;
-   overflow: hidden;
-   z-index: 0;
-  }
-
-  /* TOP ROW */
-  .scroll-row.top {
-   top: 0;
-   padding-top: 10px;
-  }
-
-  /* BOTTOM ROW */
-  .scroll-row.bottom {
-   bottom: 80px;
-   padding-bottom: 10px;
-  }
-
-  /* TRACK */
-  .scroll-track {
-   display: flex;
-   width: max-content;
-   align-items: center;
-  }
-
-  /* DIRECTIONS */
-  .scroll-left .scroll-track {
-   animation: scrollLeft 40s linear infinite 2s;
-   animation-fill-mode: both;
-  }
-
-  .scroll-right .scroll-track {
-   animation: scrollRight 40s linear infinite 2s;
-   animation-fill-mode: both;
-  }
-
-  /* IMAGES */
-  .scroll-track img {
-   margin: 0 15px;
-   border-radius: 18px;
-   object-fit: cover;
-   opacity: 0.75;
-   animation: fadeIn 40s linear infinite 1s;
-   animation-fill-mode: both;
-  }
-
-  /* HEIGHT VARIATION */
-  .scroll-track-a img:nth-child(odd) {
-   height: 25dvh;
-  }
-  .scroll-track-a img:nth-child(even) {
-   height: 30dvh;
-  }
-
-  .scroll-track-b img:nth-child(odd) {
-   height: 30dvh;
-  }
-  .scroll-track-b img:nth-child(even) {
-   height: 25dvh;
-  }
-
-  /* ANIMATIONS */
-@keyframes scrollLeft {
-   from {
-    transform: translateX(0);
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Invitation</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=BJ+Cree:wght@400;500;600;700&family=Delius&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Updock&display=swap" rel="stylesheet">
+  <style>
+   :root {
+    --primary: #8ead7f;
+    --secondary: #40916c;
    }
-   to {
+
+   .main::-webkit-scrollbar {
+    display: none;
+   }
+
+   /* RESET */
+   body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Delius', cursive;
+   }
+
+   /* SCROLL SNAP */
+   .main {
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+   }
+
+   .section {
+    height: 100dvh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+
+   /* COLORS */
+   .section:nth-child(1) {
+    background: #f4f6f8;
+   }
+
+   .section:nth-child(2) {
+    background: #e8f0dc;
+   }
+
+   .section:nth-child(3) {
+    background: #dce7c8;
+   }
+
+   .section:nth-child(4) {
+    background: #cdddb3;
+   }
+
+   /* TITLE */
+   .section-title {
+    font-family: 'Updock', cursive;
+    font-size: 3.5rem;
+    color: var(--secondary);
+    text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+   }
+
+   /* TITLE */
+   .main-title {
+    font-size: 4.5rem !important;
+    animation: fadeUp 7s ease 2s;
+    animation-fill-mode: both;
+    transform: translateY(-40px);
+   }
+
+   .hero-sub {
+    font-size: 1.2rem;
+    color: #555;
+    animation: fadeUp2 10s ease 2s;
+    animation-fill-mode: both;
+    transform: translateY(-40px);
+    text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white, 0 0 25px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+   }
+
+   /* HERO */
+   #home {
+    position: relative;
+    overflow: hidden;
+   }
+
+   .hero-gallery {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+   }
+
+   /* ROW BASE */
+   .scroll-row {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+   }
+
+   /* TOP ROW */
+   .scroll-row.top {
+    top: 0;
+    padding-top: 10px;
+   }
+
+   /* BOTTOM ROW */
+   .scroll-row.bottom {
+    bottom: 80px;
+    padding-bottom: 10px;
+   }
+
+   /* TRACK */
+   .scroll-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+   }
+
+   /* DIRECTIONS */
+   .scroll-left .scroll-track {
+    animation: scrollLeft 40s linear infinite 2s;
+    animation-fill-mode: both;
+   }
+
+   .scroll-right .scroll-track {
+    animation: scrollRight 40s linear infinite 2s;
+    animation-fill-mode: both;
+   }
+
+   /* IMAGES */
+   .scroll-track img {
+    margin: 0 15px;
+    border-radius: 18px;
+    object-fit: cover;
+    opacity: 0.75;
+    animation: fadeIn 40s linear infinite 1s;
+    animation-fill-mode: both;
+   }
+
+   /* HEIGHT VARIATION */
+   .scroll-track-a img:nth-child(odd) {
+    height: 25dvh;
+   }
+
+   .scroll-track-a img:nth-child(even) {
+    height: 30dvh;
+   }
+
+   .scroll-track-b img:nth-child(odd) {
+    height: 30dvh;
+   }
+
+   .scroll-track-b img:nth-child(even) {
+    height: 25dvh;
+   }
+
+   /* ANIMATIONS */
+   @keyframes scrollLeft {
+    from {
+     transform: translateX(0);
+    }
+
+    to {
+     transform: translateX(-50%);
+    }
+   }
+
+   @keyframes scrollRight {
+    from {
+     transform: translateX(-50%);
+    }
+
+    to {
+     transform: translateX(0);
+    }
+   }
+
+   @keyframes fadeIn {
+    0% {
+     opacity: 0;
+    }
+
+    10% {
+     opacity: 0;
+    }
+
+    15% {
+     opacity: 0.5;
+    }
+
+    95% {
+     opacity: 0.5;
+    }
+
+    100% {
+     opacity: 0;
+    }
+   }
+
+   @keyframes fadeUp {
+    0% {
+     opacity: 0;
+     transform: translateY(20px);
+    }
+
+    35% {
+     opacity: 1;
+     transform: translateY(0);
+    }
+
+    70% {
+     opacity: 1;
+     transform: translateY(-40px);
+    }
+
+    100% {
+     opacity: 1;
+     transform: translateY(-40px);
+    }
+   }
+
+   @keyframes fadeUp2 {
+    0% {
+     opacity: 0;
+     transform: translateY(20px);
+    }
+
+    15% {
+     opacity: 0;
+     transform: translateY(20px);
+    }
+
+    25% {
+     opacity: 1;
+     transform: translateY(0);
+    }
+
+    50% {
+     opacity: 1;
+     transform: translateY(-40px);
+    }
+
+    100% {
+     opacity: 1;
+     transform: translateY(-40px);
+    }
+   }
+
+   /* OVERLAY */
+   #home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(1.2px);
+    z-index: 1;
+   }
+
+   .hero-content {
+    position: relative;
+    z-index: 2;
+   }
+
+   /* Section 2 */
+   .fancy-date-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    font-family: 'Playfair Display', serif;
+    /* elegant font */
+   }
+
+   .fancy-date-box span {
+    display: inline-block;
+   }
+
+   .fancy-date-box .divider {
+    color: grey;
+   }
+
+   /* COUNTDOWN */
+   .time-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+   }
+   
+   .date-box {
+    width: 235px!important;
+    height: 70px;
+    margin:0 auto;
+    border: 2px solid var(--secondary);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.6);
+    font-family: "BJ Cree", serif;
+   }
+
+   .time-box {
+    width: 70px;
+    height: 70px;
+    border: 2px solid var(--secondary);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.6);
+    font-family: "BJ Cree", serif;
+   }
+
+   .time-box span {
+    font-size: 1.4rem;
+    font-weight: bold;
+   }
+
+   #count-date {
+    font-size: 1.5rem;
+    font-family: "BJ Cree", serif;
+    font-weight: 700;
+    font-style: normal;
+   }
+
+   .time-box small {
+    font-size: 0.85rem;
+   }
+
+   /* MARQUEE EDGES */
+   #news {
+    position: relative;
+    overflow: hidden;
+   }
+
+   .marquee {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+   }
+
+   /* TEXT STYLE */
+   .marquee span {
+    font-family: 'Updock', cursive;
+    font-size: 1.8rem;
+    color: var(--secondary);
+    opacity: 0.4;
+    white-space: nowrap;
+    margin-right: 40px;
+   }
+
+   /* TRACK */
+   .track {
+    display: flex;
+    width: max-content;
+   }
+
+   /* HORIZONTAL */
+   .marquee.top {
+    top: 0;
+    left: 0;
+    width: 100%;
+   }
+
+   .marquee.bottom {
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    animation: fadeUpscrolltext 1s linear 5.2s;
+    animation-fill-mode: both;
+   }
+
+   .marquee.top .track {
+    animation: marqueeLeft 25s linear infinite;
+   }
+
+   .marquee.bottom .track {
+    animation: marqueeRight 25s linear infinite;
+   }
+
+   /* VERTICAL */
+   .marquee.left {
+    left: 0;
+    top: 0;
+    height: 100%;
+    writing-mode: vertical-rl;
+   }
+
+   .marquee.right {
+    right: -40px;
+    top: 0;
+    height: 100%;
+    writing-mode: vertical-rl;
+   }
+
+   .track.vertical {
+    flex-direction: column;
+   }
+
+   .marquee.left .track {
+    animation: marqueeUp 25s linear infinite;
+   }
+
+   .marquee.right .track {
+    animation: marqueeDown 25s linear infinite;
+   }
+
+   /* ANIMATIONS */
+   @keyframes marqueeLeft {
+    from {
+     transform: translateX(0);
+    }
+
+    to {
+     transform: translateX(-50%);
+    }
+   }
+
+   @keyframes marqueeRight {
+    from {
+     transform: translateX(-50%);
+    }
+
+    to {
+     transform: translateX(0);
+    }
+   }
+
+   @keyframes marqueeUp {
+    from {
+     transform: translateY(0);
+    }
+
+    to {
+     transform: translateY(-50%);
+    }
+   }
+
+   @keyframes marqueeDown {
+    from {
+     transform: translateY(-50%);
+    }
+
+    to {
+     transform: translateY(0);
+    }
+   }
+
+   @keyframes fadeUpscrolltext {
+    from {
+     bottom: 0px;
+    }
+
+    to {
+     bottom: 90px;
+    }
+   }
+
+   /* NAVBAR */
+   .bottom-nav {
+    position: fixed;
+    z-index: 2;
+    bottom: 10px;
+    left: 50%;
     transform: translateX(-50%);
+    width: 95%;
+    max-width: 500px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    animation: fadeNav 1s ease 5.2s;
+    animation-fill-mode: both;
    }
-  }
 
-@keyframes scrollRight {
-   from {
-    transform: translateX(-50%);
+   @keyframes fadeNav {
+    from {
+     opacity: 0;
+     transform: translate(-50%, 40px);
+    }
+
+    to {
+     opacity: 1;
+     transform: translate(-50%, 0);
+    }
    }
-   to {
-    transform: translateX(0);
+
+   .nav-link {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
    }
-  }
 
-@keyframes fadeIn {
-   0% {
-    opacity: 0;
+   .nav-link:hover {
+    color: #1b4332;
    }
-   10% {
-    opacity: 0;
+
+   .nav-link i {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 3px;
    }
-   15% {
-    opacity: 0.5;
-   }
-   95% {
-    opacity: 0.5;
-   }
-   100% {
-    opacity: 0;
-   }
-  }
-
-@keyframes fadeUp {
-   0% {
-    opacity: 0;
-    transform: translateY(20px);
-   }
-   35% {
-    opacity: 1;
-    transform: translateY(0);
-   }
-   70% {
-    opacity: 1;
-    transform: translateY(-40px);
-   }
-   100% {
-    opacity: 1;
-    transform: translateY(-40px);
-   }
-  }
-
-@keyframes fadeUp2 {
-   0% {
-    opacity: 0;
-    transform: translateY(20px);
-   }
-   15% {
-    opacity: 0;
-    transform: translateY(20px);
-   }
-   25% {
-    opacity: 1;
-    transform: translateY(0);
-   }
-   50% {
-    opacity: 1;
-    transform: translateY(-40px);
-   }
-   100% {
-    opacity: 1;
-    transform: translateY(-40px);
-   }
-  }
-
-  /* OVERLAY */
-  #home::after {
-   content: "";
-   position: absolute;
-   inset: 0;
-   backdrop-filter: blur(1.2px);
-   z-index: 1;
-  }
-
-  .hero-content {
-   position: relative;
-   z-index: 2;
-  }
-
-  /* COUNTDOWN */
-  .time-boxes {
-   display: flex;
-   justify-content: center;
-   gap: 12px;
-  }
-
-  .time-box {
-   width: 70px;
-   height: 70px;
-   border: 2px solid var(--secondary);
-   border-radius: 12px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   color: var(--secondary);
-   background: rgba(255,255,255,0.6);
-  }
-
-  .time-box span {
-   font-size: 1.4rem;
-   font-weight: bold;
-  }
-  
-  #count-date {
-   font-size: 1.4rem;
-   font-weight: bold;
-  }
-
-  .time-box small {
-   font-size: 0.7rem;
-  }
-
-  /* NAVBAR */
-  .bottom-nav {
-   position: fixed;
-   z-index: 2;
-   bottom: 10px;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 95%;
-   max-width: 500px;
-   background: linear-gradient(135deg, var(--primary), var(--secondary));
-   border-radius: 25px;
-   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-   padding: 10px 0;
-   display: flex;
-   justify-content: space-around;
-   animation: fadeNav 1s ease 5.2s;
-   animation-fill-mode: both;
-  }
-@keyframes fadeNav {
-   from {
-    opacity: 0;
-    transform: translate(-50%,40px);
-   }
-   to {
-    opacity: 1;
-    transform: translate(-50%,0);
-   }
-  }
-
-  .nav-link {
-   color: #fff;
-   text-align: center;
-   font-size: 13px;
-  }
-  
-  .nav-link:hover {
-   color: #1b4332;
-  }
-
-  .nav-link i {
-   display: block;
-   font-size: 1.5rem;
-   margin-bottom: 3px;
-  }
- </style>
-</head>
-
-<body>
-
- <div class="main">
-
-  <!-- HOME -->
-  <section class="section" id="home">
-
-   <div class="hero-gallery">
-
-    <div class="scroll-row top scroll-left">
-     <div class="scroll-track scroll-track-a">
-      <img src="https://picsum.photos/300/400?1">
-      <img src="https://picsum.photos/250/350?2">
-      <img src="https://picsum.photos/320/420?3">
-      <img src="https://picsum.photos/280/360?4">
-      <img src="https://picsum.photos/300/380?5">
-      <img src="https://picsum.photos/260/340?6">
-
-      <img src="https://picsum.photos/300/400?1">
-      <img src="https://picsum.photos/250/350?2">
-      <img src="https://picsum.photos/320/420?3">
-      <img src="https://picsum.photos/280/360?4">
-      <img src="https://picsum.photos/300/380?5">
-      <img src="https://picsum.photos/260/340?6">
+  </style>
+ </head>
+ <body>
+  <div class="main">
+   <!-- HOME -->
+   <section class="section" id="home">
+    <div class="hero-gallery">
+     <div class="scroll-row top scroll-left">
+      <div class="scroll-track scroll-track-a">
+       <img src="https://picsum.photos/300/400?1">
+       <img src="https://picsum.photos/250/350?2">
+       <img src="https://picsum.photos/320/420?3">
+       <img src="https://picsum.photos/280/360?4">
+       <img src="https://picsum.photos/300/380?5">
+       <img src="https://picsum.photos/260/340?6">
+       <img src="https://picsum.photos/300/400?1">
+       <img src="https://picsum.photos/250/350?2">
+       <img src="https://picsum.photos/320/420?3">
+       <img src="https://picsum.photos/280/360?4">
+       <img src="https://picsum.photos/300/380?5">
+       <img src="https://picsum.photos/260/340?6">
+      </div>
+     </div>
+     <div class="scroll-row bottom scroll-right">
+      <div class="scroll-track scroll-track-b">
+       <img src="https://picsum.photos/300/400?7">
+       <img src="https://picsum.photos/250/350?8">
+       <img src="https://picsum.photos/320/420?9">
+       <img src="https://picsum.photos/280/360?10">
+       <img src="https://picsum.photos/300/380?11">
+       <img src="https://picsum.photos/260/340?12">
+       <img src="https://picsum.photos/300/400?7">
+       <img src="https://picsum.photos/250/350?8">
+       <img src="https://picsum.photos/320/420?9">
+       <img src="https://picsum.photos/280/360?10">
+       <img src="https://picsum.photos/300/380?11">
+       <img src="https://picsum.photos/260/340?12">
+      </div>
      </div>
     </div>
-
-    <div class="scroll-row bottom scroll-right">
-     <div class="scroll-track scroll-track-b">
-      <img src="https://picsum.photos/300/400?7">
-      <img src="https://picsum.photos/250/350?8">
-      <img src="https://picsum.photos/320/420?9">
-      <img src="https://picsum.photos/280/360?10">
-      <img src="https://picsum.photos/300/380?11">
-      <img src="https://picsum.photos/260/340?12">
-
-      <img src="https://picsum.photos/300/400?7">
-      <img src="https://picsum.photos/250/350?8">
-      <img src="https://picsum.photos/320/420?9">
-      <img src="https://picsum.photos/280/360?10">
-      <img src="https://picsum.photos/300/380?11">
-      <img src="https://picsum.photos/260/340?12">
+    <div class="hero-content">
+     <h1 class="section-title main-title">Niyas & Nasiha</h1>
+     <div class="hero-sub"> Our Wedding Invitation </div>
+    </div>
+   </section>
+   <!-- SAVE DATE -->
+   <section class="section" id="news">
+    <div style="transform: translateY(-25px);">
+     <h1 class="section-title" style="font-size:4.5rem">Save the Date</h1>
+     <div class="fancy-date-box mb-2">
+      <span>18</span>
+      <span class="divider">|</span>
+      <span>OCT</span>
+      <span class="divider">|</span>
+      <span>26</span>
+     </div>
+     <br>
+     <div class="fancy-date-box mb-4 fs-4"> SUNDAY </div>
+     <div class="date-box mb-3 w-100">
+      <div id="count-date"></div>
+     </div>
+     <div class="time-boxes">
+      <div class="time-box">
+       <span id="hh">00</span>
+       <small>Hours</small>
+      </div>
+      <div class="time-box">
+       <span id="mm">00</span>
+       <small>Minutes</small>
+      </div>
+      <div class="time-box">
+       <span id="ss">00</span>
+       <small>Seconds</small>
+      </div>
      </div>
     </div>
-
-   </div>
-
-   <div class="hero-content">
-    <h1 class="section-title main-title">Niyas & Nasiha</h1>
-    <div class="hero-sub">
-     Our Wedding Invitation
-    </div>
-   </div>
-
-  </section>
-
-  <!-- SAVE DATE -->
-  <section class="section" id="news">
-   <div style="transform: translateY(-40px);" >
-    <h1 class="section-title" style="font-size:4.5rem">Save the Date</h1>
-    <div class="mb-2 fs-4">
-     18 Oct 2026
-    </div>
-    <div class="mb-4 fs-4">
-     Edakkara
-    </div>
-
-    <div class="time-box mb-3 w-100">
-     <div id="count-date"></div>
-    </div>
-
-    <div class="time-boxes">
-     <div class="time-box">
-      <span id="hh">00</span><small>Hours</small>
-     </div>
-     <div class="time-box">
-      <span id="mm">00</span><small>Minutes</small>
-     </div>
-     <div class="time-box">
-      <span id="ss">00</span><small>Seconds</small>
+    <!-- MARQUEE EDGES -->
+    <div class="marquee top">
+     <div class="track">
+      <span>Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha</span>
      </div>
     </div>
-
-   </div>
-  </section>
-
-  <section class="section" id="contact">
-   <h1 class="section-title">Gallery</h1>
-  </section>
-
-  <section class="section" id="about">
-   <h1 class="section-title">Venue</h1>
-  </section>
-
- </div>
-
- <!-- NAV -->
- <div class="bottom-nav">
-  <a href="#home" class="nav-link active"><i class="bi bi-house-heart"></i>Home</a>
-  <a href="#news" class="nav-link"><i class="bi bi-calendar-event"></i>Date</a>
-  <a href="#contact" class="nav-link"><i class="bi bi-images"></i>Gallery</a>
-  <a href="#about" class="nav-link"><i class="bi bi-geo-alt"></i>Venue</a>
- </div>
+    <div class="marquee bottom">
+     <div class="track">
+      <span>Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha</span>
+     </div>
+    </div>
+    <div class="marquee left">
+     <div class="track vertical">
+      <span>Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha</span>
+     </div>
+    </div>
+    <div class="marquee right">
+     <div class="track vertical">
+      <span>Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha • Niyas & Nasiha</span>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="contact">
+    <h1 class="section-title">Gallery</h1>
+   </section>
+   <section class="section" id="about">
+    <h1 class="section-title">Venue</h1>
+   </section>
+  </div>
+  <!-- NAV -->
+  <div class="bottom-nav">
+   <a href="#home" class="nav-link active">
+    <i class="bi bi-house-heart"></i>Home </a>
+   <a href="#news" class="nav-link">
+    <i class="bi bi-calendar-event"></i>Date </a>
+   <a href="#contact" class="nav-link">
+    <i class="bi bi-images"></i>Gallery </a>
+   <a href="#about" class="nav-link">
+    <i class="bi bi-geo-alt"></i>Venue </a>
+  </div>
 
  <script>
   // NAV
